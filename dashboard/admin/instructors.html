@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Instructors | Ride The Wind</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css">
+  <style>
+    .dashboard-sidebar {
+      width: 250px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border-color);
+      padding: 2rem 0;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    .dashboard-content {
+      margin-left: 250px;
+      padding: 2rem;
+    }
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+      gap: 0.75rem;
+    }
+    .sidebar-link:hover, .sidebar-link.active {
+      background: var(--bg-tertiary);
+      color: var(--primary);
+    }
+    .dashboard-card {
+      background: var(--bg-primary);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+    }
+    @media (max-width: 768px) {
+      .dashboard-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+      .dashboard-sidebar.show {
+        transform: translateX(0);
+      }
+      .dashboard-content {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="dashboard-sidebar">
+    <div style="padding: 0 1.5rem; margin-bottom: 2rem;">
+      <a href="../../pages/index.html" style="text-decoration: none;">
+        <h4 style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 1.5rem;">🏄</span>
+          Admin Panel
+        </h4>
+      </a>
+    </div>
+    <nav>
+      <a href="index.html" class="sidebar-link"><span>📊</span> Dashboard</a>
+      <a href="bookings.html" class="sidebar-link"><span>📅</span> Bookings</a>
+      <a href="students.html" class="sidebar-link"><span>👥</span> Students</a>
+      <a href="instructors.html" class="sidebar-link active"><span>🏆</span> Instructors</a>
+      <a href="wind-forecast.html" class="sidebar-link"><span>🌬️</span> Wind Forecast</a>
+      <a href="messages.html" class="sidebar-link"><span>💬</span> Messages</a>
+      <a href="settings.html" class="sidebar-link"><span>⚙️</span> Settings</a>
+    </nav>
+    <div style="padding: 1.5rem; margin-top: 2rem; border-top: 1px solid var(--border-color);">
+      <div class="d-flex gap-2 mb-3">
+        <button class="theme-toggle flex-grow-1 justify-content-center" id="rtlToggle" style="border-radius: 8px; width: auto;">RTL</button>
+        <button class="theme-toggle flex-grow-1 justify-content-center" id="themeToggle" style="border-radius: 8px; width: auto;"><span id="themeIcon">🌙</span></button>
+      </div>
+      <button id="logoutBtn" class="btn btn-outline-danger w-100">Logout</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="dashboard-content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1>Instructors</h1>
+      <button class="btn btn-primary" id="sidebarToggle" style="display: none;">☰ Menu</button>
+    </div>
+
+    <!-- Instructor Grid -->
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="dashboard-card text-center p-4">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background-color: #eee; margin: 0 auto 1rem; overflow:hidden;">
+            <img src="https://i.pravatar.cc/150?img=11" alt="Instructor" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <h4>John Doe</h4>
+          <p class="text-muted">Head Instructor</p>
+          <div class="d-flex justify-content-center gap-2 mb-3">
+            <span class="badge badge-primary">Kitesurf</span>
+            <span class="badge badge-info">Windsurf</span>
+          </div>
+          <div class="d-flex justify-content-between border-top pt-3">
+            <div class="text-center">
+              <h5 class="mb-0">120</h5>
+              <small class="text-muted">Lessons</small>
+            </div>
+            <div class="text-center">
+              <h5 class="mb-0">4.9</h5>
+              <small class="text-muted">Rating</small>
+            </div>
+          </div>
+          <button class="btn btn-outline-primary w-100 mt-3">View Profile</button>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="dashboard-card text-center p-4">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background-color: #eee; margin: 0 auto 1rem; overflow:hidden;">
+            <img src="https://i.pravatar.cc/150?img=5" alt="Instructor" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <h4>Jane Smith</h4>
+          <p class="text-muted">Senior Instructor</p>
+          <div class="d-flex justify-content-center gap-2 mb-3">
+            <span class="badge badge-primary">Kitesurf</span>
+          </div>
+          <div class="d-flex justify-content-between border-top pt-3">
+            <div class="text-center">
+              <h5 class="mb-0">85</h5>
+              <small class="text-muted">Lessons</small>
+            </div>
+            <div class="text-center">
+              <h5 class="mb-0">4.8</h5>
+              <small class="text-muted">Rating</small>
+            </div>
+          </div>
+          <button class="btn btn-outline-primary w-100 mt-3">View Profile</button>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="dashboard-card text-center p-4 d-flex flex-column justify-content-center align-items-center h-100" style="min-height: 300px; border: 2px dashed var(--border-color); background: transparent;">
+          <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--text-muted);">+</div>
+          <h5 class="text-muted">Add New Instructor</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+  <script>
+    if (window.innerWidth < 768) {
+      document.getElementById('sidebarToggle').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

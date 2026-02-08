@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | Ride The Wind</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css">
+  <style>
+    .dashboard-sidebar{width:250px;height:100vh;position:fixed;top:0;left:0;background:var(--bg-secondary);border-right:1px solid var(--border-color);padding:2rem 0;overflow-y:auto;z-index:1000}
+    .dashboard-content{margin-left:250px;padding:2rem}
+    .sidebar-link{display:flex;align-items:center;padding:0.75rem 1.5rem;color:var(--text-secondary);text-decoration:none;transition:var(--transition);gap:0.75rem}
+    .sidebar-link:hover,.sidebar-link.active{background:var(--bg-tertiary);color:var(--primary)}
+    .dashboard-card{background:var(--bg-primary);border-radius:var(--radius-xl);padding:1.5rem;box-shadow:var(--shadow-md);border:1px solid var(--border-color)}
+    @media (max-width:768px){.dashboard-sidebar{transform:translateX(-100%);transition:transform 0.3s ease}.dashboard-sidebar.show{transform:translateX(0)}.dashboard-content{margin-left:0}}
+  </style>
+</head>
+<body>
+  <div class="dashboard-sidebar">
+    <div style="padding:0 1.5rem;margin-bottom:2rem">
+      <a href="../../pages/index.html" style="text-decoration: none;">
+        <h4 style="color:var(--primary);display:flex;align-items:center;gap:0.5rem"><span style="font-size:1.5rem">🏄</span>Student Portal</h4>
+      </a>
+    </div>
+    <nav>
+      <a href="index.html" class="sidebar-link active"><span>📊</span>Dashboard</a>
+      <a href="my-lessons.html" class="sidebar-link"><span>📅</span>My Lessons</a>
+      <a href="progress.html" class="sidebar-link"><span>📈</span>Progress</a>
+      <a href="equipment.html" class="sidebar-link"><span>🏄</span>Equipment</a>
+      <a href="certificates.html" class="sidebar-link"><span>🏆</span>Certificates</a>
+      <a href="profile.html" class="sidebar-link"><span>👤</span>Profile</a>
+      <a href="settings.html" class="sidebar-link"><span>⚙️</span>Settings</a>
+    </nav>
+    <div style="padding:1.5rem;margin-top:2rem;border-top:1px solid var(--border-color)">
+      <div class="d-flex gap-2 mb-3">
+        <button class="theme-toggle flex-grow-1 justify-content-center" id="rtlToggle" style="border-radius: 8px; width: auto;">RTL</button>
+        <button class="theme-toggle flex-grow-1 justify-content-center" id="themeToggle" style="border-radius: 8px; width: auto;"><span id="themeIcon">🌙</span></button>
+      </div>
+      <button id="logoutBtn" class="btn btn-outline-danger w-100">Logout</button>
+    </div>
+  </div>
+
+  <div class="dashboard-content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h1>Welcome Back, Student!</h1>
+        <p style="color:var(--text-muted)">Your learning journey at a glance</p>
+      </div>
+      <button class="btn btn-primary" id="sidebarToggle" style="display:none">☰ Menu</button>
+    </div>
+
+    <div class="row g-4 mb-4">
+      <div class="col-md-3">
+        <div class="dashboard-card">
+          <div style="font-size:2rem;margin-bottom:0.5rem">📅</div>
+          <h3 class="dashboard-stat" data-count="8">0</h3>
+          <p style="color:var(--text-muted);margin:0">Lessons Completed</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="dashboard-card">
+          <div style="font-size:2rem;margin-bottom:0.5rem">🏄</div>
+          <h3 class="dashboard-stat" data-count="15">0</h3>
+          <p style="color:var(--text-muted);margin:0">Skills Mastered</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="dashboard-card">
+          <div style="font-size:2rem;margin-bottom:0.5rem">⏱️</div>
+          <h3 class="dashboard-stat" data-count="24">0</h3>
+          <p style="color:var(--text-muted);margin:0">Hours Practiced</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="dashboard-card">
+          <div style="font-size:2rem;margin-bottom:0.5rem">🏆</div>
+          <h3 class="dashboard-stat" data-count="3">0</h3>
+          <p style="color:var(--text-muted);margin:0">Certificates Earned</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+      <div class="col-lg-8">
+        <div class="dashboard-card">
+          <h3 style="margin-bottom:1.5rem">Upcoming Lessons</h3>
+          <div class="mb-3" style="padding:1rem;border-radius:0.5rem;background:var(--bg-secondary)">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <h5 style="margin-bottom:0.5rem">Intermediate Kitesurfing</h5>
+                <p style="color:var(--text-muted);margin:0">📅 Dec 20, 2024 at 10:00 AM</p>
+                <p style="color:var(--text-muted);margin:0">👨‍🏫 Instructor: Alex Martinez</p>
+              </div>
+              <span class="skill-badge skill-intermediate">Intermediate</span>
+            </div>
+          </div>
+          <div class="mb-3" style="padding:1rem;border-radius:0.5rem;background:var(--bg-secondary)">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <h5 style="margin-bottom:0.5rem">Jump Training Session</h5>
+                <p style="color:var(--text-muted);margin:0">📅 Dec 25, 2024 at 2:00 PM</p>
+                <p style="color:var(--text-muted);margin:0">👨‍🏫 Instructor: Tom Rodriguez</p>
+              </div>
+              <span class="skill-badge skill-advanced">Advanced</span>
+            </div>
+          </div>
+          <a href="my-lessons.html" class="btn btn-primary mt-3">View All Lessons</a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="dashboard-card">
+          <h3 style="margin-bottom:1.5rem">Progress Chart</h3>
+          <div style="height:250px">
+            <canvas id="studentProgressChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="dashboard-card">
+          <h3 style="margin-bottom:1.5rem">Recent Achievements</h3>
+          <div class="d-flex align-items-center gap-3 mb-3" style="padding:1rem;border-radius:0.5rem;background:var(--bg-secondary)">
+            <div style="font-size:2rem">🏆</div>
+            <div>
+              <h5 style="margin-bottom:0.25rem">First Successful Ride</h5>
+              <p style="color:var(--text-muted);margin:0;font-size:0.875rem">Completed Dec 15, 2024</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-3 mb-3" style="padding:1rem;border-radius:0.5rem;background:var(--bg-secondary)">
+            <div style="font-size:2rem">⭐</div>
+            <div>
+              <h5 style="margin-bottom:0.25rem">Upwind Mastery</h5>
+              <p style="color:var(--text-muted);margin:0;font-size:0.875rem">Completed Dec 18, 2024</p>
+            </div>
+          </div>
+          <a href="certificates.html" class="btn btn-primary mt-2">View All Certificates</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="dashboard-card">
+          <h3 style="margin-bottom:1.5rem">Quick Actions</h3>
+          <div class="d-grid gap-3">
+            <a href="../../pages/booking.html" class="btn btn-primary btn-lg">📅 Book New Lesson</a>
+            <a href="equipment.html" class="btn btn-secondary btn-lg">✅ Equipment Checklist</a>
+            <a href="progress.html" class="btn btn-secondary btn-lg">📊 View Progress Report</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .navbar-nav {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+  right: 0;
+  left: auto;
+}
+
+[dir="rtl"] .me-1, [dir="rtl"] .me-2, [dir="rtl"] .me-3 {
+  margin-left: 0.25rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .ms-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .text-end {
+  text-align: left !important;
+}
+
+/* Adjust dashboard sidebar for RTL */
+[dir="rtl"] .dashboard-sidebar {
+  right: 0;
+  left: auto;
+  border-left: 1px solid var(--border-color);
+  border-right: none;
+}
+
+[dir="rtl"] .dashboard-content {
+  margin-right: 250px;
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .dashboard-sidebar {
+    transform: translateX(100%);
+  }
+}

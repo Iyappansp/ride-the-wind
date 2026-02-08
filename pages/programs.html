@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kitesurfing and windsurfing programs for all skill levels">
+  <title>Programs | Ride The Wind</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><span style="font-size: 1.8rem;">🏄</span> Ride The Wind</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Book Now</a></li>
+          <li class="nav-item"><a class="nav-link" href="instructors.html">Instructors</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="registerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Register
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="registerDropdown">
+              <li><a class="dropdown-item" href="register-student.html">Student Registration</a></li>
+              <li><a class="dropdown-item" href="register-admin.html">Admin Registration</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Login
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="login.html#admin">Admin Login</a></li>
+              <li><a class="dropdown-item" href="login.html#student">Student Login</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ms-3">
+             <div class="d-flex gap-2">
+              <button class="theme-toggle" id="rtlToggle" aria-label="Toggle RTL">
+                <span id="rtlIcon">🇸🇦</span>
+              </button>
+              <button class="theme-toggle" id="themeToggle"><span id="themeIcon">🌙</span></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section style="background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); padding: 5rem 0 3rem; color: white; text-align: center;">
+    <div class="container">
+      <h1>Our Programs</h1>
+      <p style="font-size: 1.125rem;">From first-timer to freestyle pro - we have the perfect program for you</p>
+    </div>
+  </section>
+
+  <section class="section" id="beginner">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="skill-badge skill-beginner mb-3" style="display: inline-block;">Beginner</span>
+          <h2>Beginner Programs</h2>
+          <p style="font-size: 1.125rem; color: var(--text-secondary);">Never touched a kite or windsurfer? Perfect! Our beginner programs start with the absolute basics and get you riding independently.</p>
+          <h4 class="mt-4">What You'll Learn:</h4>
+          <ul style="color: var(--text-secondary); font-size: 1.05rem;">
+            <li>Wind theory and weather reading</li>
+            <li>Equipment setup and safety systems</li>
+            <li>Kite/sail control on land and water</li>
+            <li>Body dragging and water starts</li>
+            <li>First successful rides</li>
+            <li>Self-rescue techniques</li>
+          </ul>
+          <div class="mt-4">
+            <a href="booking.html" class="btn btn-primary btn-lg">Book Beginner Lesson</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1502933691298-84fc14542831?w=800&h=600&fit=crop" alt="Beginner lessons" style="border-radius: 1rem; width: 100%;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="intermediate">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-lg-2">
+          <span class="skill-badge skill-intermediate mb-3" style="display: inline-block;">Intermediate</span>
+          <h2>Intermediate Programs</h2>
+          <p style="font-size: 1.125rem; color: var(--text-secondary);">Already riding? Time to level up! Master upwind riding, smooth transitions, and prepare for your first jumps.</p>
+          <h4 class="mt-4">What You'll Master:</h4>
+          <ul style="color: var(--text-secondary); font-size: 1.05rem;">
+            <li>Consistent upwind riding</li>
+            <li>Smooth tack and jibe transitions</li>
+            <li>Board control and edge work</li>
+            <li>Power management in varying winds</li>
+            <li>Introduction to jumping</li>
+            <li>Video analysis and feedback</li>
+          </ul>
+          <div class="mt-4">
+            <a href="booking.html" class="btn btn-primary btn-lg">Book Intermediate Lesson</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop" alt="Intermediate lessons" style="border-radius: 1rem; width: 100%;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="advanced">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="skill-badge skill-advanced mb-3" style="display: inline-block;">Advanced</span>
+          <h2>Advanced Programs</h2>
+          <p style="font-size: 1.125rem; color: var(--text-secondary);">Ready to push your limits? Our advanced coaching helps you master tricks, jumps, and competition-level skills.</p>
+          <h4 class="mt-4">Advanced Skills:</h4>
+          <ul style="color: var(--text-secondary); font-size: 1.05rem;">
+            <li>High jumps and controlled landings</li>
+            <li>Rotations: backrolls, frontrolls</li>
+            <li>Freestyle tricks and grabs</li>
+            <li>Wave riding techniques</li>
+            <li>Unhooked maneuvers</li>
+            <li>Competition preparation</li>
+          </ul>
+          <div class="mt-4">
+            <a href="booking.html" class="btn btn-primary btn-lg">Book Advanced Coaching</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1476158292179-506d3a2c0e6e?w=800&h=600&fit=crop" alt="Advanced lessons" style="border-radius: 1rem; width: 100%;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Pricing Packages</h2>
+        <p>Flexible options to match your goals</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-title">Discovery Session</h3>
+              <div class="pricing-price">$150</div>
+              <p class="pricing-period">2 hours</p>
+            </div>
+            <ul class="pricing-features">
+              <li>✓ Introduction to basics</li>
+              <li>✓ Equipment included</li>
+              <li>✓ Small group (max 5)</li>
+              <li>✓ Perfect for first-timers</li>
+            </ul>
+            <a href="booking.html" class="btn btn-primary w-100">Book Now</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="pricing-card featured">
+            <div class="pricing-header">
+              <h3 class="pricing-title">Complete Course</h3>
+              <div class="pricing-price">$600</div>
+              <p class="pricing-period">12 hours over 3-5 days</p>
+            </div>
+            <ul class="pricing-features">
+              <li>✓ Beginner to independent rider</li>
+              <li>✓ All equipment provided</li>
+              <li>✓ Small group (max 4)</li>
+              <li>✓ IKO certification</li>
+              <li>✓ Photo & video memories</li>
+            </ul>
+            <a href="booking.html" class="btn btn-primary w-100">Most Popular</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3 class="pricing-title">Private Coaching</h3>
+              <div class="pricing-price">$350</div>
+              <p class="pricing-period">2 hours</p>
+            </div>
+            <ul class="pricing-features">
+              <li>✓ One-on-one instruction</li>
+              <li>✓ Customized focus</li>
+              <li>✓ Video analysis</li>
+              <li>✓ All levels welcome</li>
+              <li>✓ Flexible scheduling</li>
+            </ul>
+            <a href="booking.html" class="btn btn-primary w-100">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" data-testid="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5>🏄 Ride The Wind</h5>
+          <p>Your premier kitesurfing and windsurfing school. Learn from the best, ride with confidence.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="YouTube">📹</a>
+            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="instructors.html">Instructors</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h5>Support</h5>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="coming-soon.html">Coming Soon</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Info</h5>
+          <p>📍 123 Beach Road, Surf Paradise<br>
+          📧 info@ridethewind.com<br>
+          📞 +1 (555) 123-4567</p>
+          <div class="mt-3">
+             <small class="text-white-50">Dashboards:</small><br>
+             <a href="../dashboard/admin/index.html" class="text-white-50 text-decoration-none me-2">Admin</a>
+             <a href="../dashboard/student/index.html" class="text-white-50 text-decoration-none">Student</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Ride The Wind. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

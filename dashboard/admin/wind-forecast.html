@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Wind Forecast | Ride The Wind</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css">
+  <style>
+    .dashboard-sidebar {
+      width: 250px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border-color);
+      padding: 2rem 0;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    .dashboard-content {
+      margin-left: 250px;
+      padding: 2rem;
+    }
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+      gap: 0.75rem;
+    }
+    .sidebar-link:hover, .sidebar-link.active {
+      background: var(--bg-tertiary);
+      color: var(--primary);
+    }
+    .dashboard-card {
+      background: var(--bg-primary);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+    }
+    @media (max-width: 768px) {
+      .dashboard-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+      .dashboard-sidebar.show {
+        transform: translateX(0);
+      }
+      .dashboard-content {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="dashboard-sidebar">
+    <div style="padding: 0 1.5rem; margin-bottom: 2rem;">
+      <a href="../../pages/index.html" style="text-decoration: none;">
+        <h4 style="color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 1.5rem;">🏄</span>
+          Admin Panel
+        </h4>
+      </a>
+    </div>
+    <nav>
+      <a href="index.html" class="sidebar-link"><span>📊</span> Dashboard</a>
+      <a href="bookings.html" class="sidebar-link"><span>📅</span> Bookings</a>
+      <a href="students.html" class="sidebar-link"><span>👥</span> Students</a>
+      <a href="instructors.html" class="sidebar-link"><span>🏆</span> Instructors</a>
+      <a href="wind-forecast.html" class="sidebar-link active"><span>🌬️</span> Wind Forecast</a>
+      <a href="messages.html" class="sidebar-link"><span>💬</span> Messages</a>
+      <a href="settings.html" class="sidebar-link"><span>⚙️</span> Settings</a>
+    </nav>
+    <div style="padding: 1.5rem; margin-top: 2rem; border-top: 1px solid var(--border-color);">
+      <div class="d-flex gap-2 mb-3">
+        <button class="theme-toggle flex-grow-1 justify-content-center" id="rtlToggle" style="border-radius: 8px; width: auto;">RTL</button>
+        <button class="theme-toggle flex-grow-1 justify-content-center" id="themeToggle" style="border-radius: 8px; width: auto;"><span id="themeIcon">🌙</span></button>
+      </div>
+      <button id="logoutBtn" class="btn btn-outline-danger w-100">Logout</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="dashboard-content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1>Wind Forecast</h1>
+      <button class="btn btn-primary" id="sidebarToggle" style="display: none;">☰ Menu</button>
+    </div>
+
+    <!-- Current Conditions -->
+    <div class="row g-4 mb-4">
+      <div class="col-lg-8">
+        <div class="dashboard-card h-100 p-4">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="mb-0">Current Conditions</h3>
+            <span class="badge badge-success">Perfect for Kitesurfing</span>
+          </div>
+          <div class="row text-center">
+            <div class="col-4">
+              <div style="font-size: 3rem;">💨</div>
+              <h2 class="display-4 fw-bold mb-0">18<span class="fs-4 text-muted">kts</span></h2>
+              <p class="text-muted">Wind Speed</p>
+            </div>
+            <div class="col-4 border-start border-end">
+              <div style="font-size: 3rem;">🧭</div>
+              <h2 class="display-4 fw-bold mb-0">NW</h2>
+              <p class="text-muted">Direction</p>
+            </div>
+            <div class="col-4">
+              <div style="font-size: 3rem;">🌊</div>
+              <h2 class="display-4 fw-bold mb-0">1.2<span class="fs-4 text-muted">m</span></h2>
+              <p class="text-muted">Wave Height</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="dashboard-card h-100 p-4">
+          <h4 class="mb-3">Quick Actions</h4>
+          <button class="btn btn-warning w-100 mb-2">⚠ Send Wind Alert to Students</button>
+          <button class="btn btn-primary w-100 mb-2">Update Forecast Data</button>
+          <div class="mt-4">
+            <small class="text-muted">Last updated: 10 minutes ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 Day Forecast Table -->
+    <div class="dashboard-card">
+      <h4 class="mb-4">Weekly Forecast</h4>
+      <div class="table-responsive">
+        <table class="table text-center align-middle">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Wind (kts)</th>
+              <th>Direction</th>
+              <th>Wave (m)</th>
+              <th>Temp (°C)</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>15-20</td>
+              <td>NW ↖</td>
+              <td>1.0</td>
+              <td>24°</td>
+              <td><span class="badge badge-success">Good</span></td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>22-28</td>
+              <td>N ↑</td>
+              <td>1.5</td>
+              <td>23°</td>
+              <td><span class="badge badge-warning">Strong</span></td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>10-14</td>
+              <td>W ←</td>
+              <td>0.5</td>
+              <td>25°</td>
+              <td><span class="badge badge-secondary">Light</span></td>
+            </tr>
+            <!-- More rows... -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+  <script>
+    if (window.innerWidth < 768) {
+      document.getElementById('sidebarToggle').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
