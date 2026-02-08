@@ -271,4 +271,5 @@ Ready to ride the wind? 🏄‍♂️🌊
 
 *Note: This is a static HTML template with UI-only dashboards using dummy data. For a fully functional booking system, integrate with a backend service.*
 #   r i d e - t h e - w i n d  
+ #   r i d e - t h e - w i n d  
  
