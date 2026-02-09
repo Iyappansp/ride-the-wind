@@ -488,7 +488,7 @@ if (logoutBtn) {
     if (confirm('Are you sure you want to logout?')) {
       // Clear user session/role if needed
       localStorage.removeItem('userRole');
-      window.location.href = '../../pages/index.html';
+      window.location.href = '../../index.html';
     }
   });
 }
