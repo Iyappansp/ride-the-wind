@@ -10,6 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg">
@@ -18,9 +19,14 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="home-2.html" data-testid="nav-home-2">Home 2</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-testid="nav-home-dropdown">
+              Home
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+            </ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link active" href="programs.html">Programs</a></li>
@@ -60,149 +66,162 @@
     </div>
   </nav>
 
-  <section style="background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); padding: 5rem 0 3rem; color: white; text-align: center;">
+  <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80');">
     <div class="container">
       <h1>Our Programs</h1>
-      <p style="font-size: 1.125rem;">From first-timer to freestyle pro - we have the perfect program for you</p>
+      <p>From first-timer to freestyle pro - we have the perfect program for you</p>
     </div>
   </section>
 
   <section class="section" id="beginner">
-    <div class="container">
+    <div class="container px-lg-5">
       <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <span class="skill-badge skill-beginner mb-3" style="display: inline-block;">Beginner</span>
-          <h2>Beginner Programs</h2>
-          <p style="font-size: 1.125rem; color: var(--text-secondary);">Never touched a kite or windsurfer? Perfect! Our beginner programs start with the absolute basics and get you riding independently.</p>
-          <h4 class="mt-4">What You'll Learn:</h4>
-          <ul style="color: var(--text-secondary); font-size: 1.05rem;">
-            <li>Wind theory and weather reading</li>
-            <li>Equipment setup and safety systems</li>
-            <li>Kite/sail control on land and water</li>
-            <li>Body dragging and water starts</li>
-            <li>First successful rides</li>
-            <li>Self-rescue techniques</li>
-          </ul>
-          <div class="mt-4">
-            <a href="booking.html" class="btn btn-primary btn-lg">Book Beginner Lesson</a>
+        <div class="col-lg-7">
+          <div>
+            <span class="skill-badge skill-beginner mb-3" style="display: inline-block;">Beginner</span>
+            <h2 class="mb-3">Beginner Programs</h2>
+            <p class="lead mb-4" style="color: var(--text-secondary); font-size: 1.1rem;">Never touched a kite or windsurfer? Perfect! Our beginner programs start with the absolute basics and get you riding independently.</p>
+            <h5 class="mb-3" style="font-weight: 600;">Soar Through the Basics:</h5>
+            <ul class="list-unstyled d-grid gap-2" style="color: var(--text-secondary); font-size: 1.05rem;">
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-success me-2"></i> Wind theory and weather reading</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-success me-2"></i> Equipment setup and safety systems</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-success me-2"></i> Kite/sail control on land and water</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-success me-2"></i> Body dragging and water starts</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-success me-2"></i> First successful rides</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-success me-2"></i> Self-rescue techniques</li>
+            </ul>
+            <div class="mt-4 pt-2">
+              <a href="booking.html" class="btn btn-primary btn-lg shadow-sm">Book Beginner Lesson</a>
+            </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1502933691298-84fc14542831?w=800&h=600&fit=crop" alt="Beginner lessons" style="border-radius: 1rem; width: 100%;">
+        <div class="col-lg-5">
+          <div class="position-relative">
+            <img src="https://images.unsplash.com/photo-1502933691298-84fc14542831?w=800&h=600&fit=crop" alt="Beginner lessons" class="img-fluid rounded-4 shadow-lg w-100 object-cover" style="aspect-ratio: 4/3;">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section section-alt" id="intermediate">
-    <div class="container">
+    <div class="container px-lg-5">
       <div class="row align-items-center g-5">
-        <div class="col-lg-6 order-lg-2">
-          <span class="skill-badge skill-intermediate mb-3" style="display: inline-block;">Intermediate</span>
-          <h2>Intermediate Programs</h2>
-          <p style="font-size: 1.125rem; color: var(--text-secondary);">Already riding? Time to level up! Master upwind riding, smooth transitions, and prepare for your first jumps.</p>
-          <h4 class="mt-4">What You'll Master:</h4>
-          <ul style="color: var(--text-secondary); font-size: 1.05rem;">
-            <li>Consistent upwind riding</li>
-            <li>Smooth tack and jibe transitions</li>
-            <li>Board control and edge work</li>
-            <li>Power management in varying winds</li>
-            <li>Introduction to jumping</li>
-            <li>Video analysis and feedback</li>
-          </ul>
-          <div class="mt-4">
-            <a href="booking.html" class="btn btn-primary btn-lg">Book Intermediate Lesson</a>
+        <div class="col-lg-7 order-lg-2">
+          <div>
+            <span class="skill-badge skill-intermediate mb-3" style="display: inline-block;">Intermediate</span>
+            <h2 class="mb-3">Intermediate Programs</h2>
+            <p class="lead mb-4" style="color: var(--text-secondary); font-size: 1.1rem;">Already riding? Time to level up! Master upwind riding, smooth transitions, and prepare for your first jumps.</p>
+            <h5 class="mb-3" style="font-weight: 600;">Level Up Your Skills:</h5>
+            <ul class="list-unstyled d-grid gap-2" style="color: var(--text-secondary); font-size: 1.05rem;">
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-primary me-2"></i> Consistent upwind riding</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-primary me-2"></i> Smooth tack and jibe transitions</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-primary me-2"></i> Board control and edge work</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-primary me-2"></i> Power management in varying winds</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-primary me-2"></i> Introduction to jumping</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-primary me-2"></i> Video analysis and feedback</li>
+            </ul>
+            <div class="mt-4 pt-2">
+              <a href="booking.html" class="btn btn-primary btn-lg shadow-sm">Book Intermediate Lesson</a>
+            </div>
           </div>
         </div>
-        <div class="col-lg-6 order-lg-1">
-          <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop" alt="Intermediate lessons" style="border-radius: 1rem; width: 100%;">
+        <div class="col-lg-5 order-lg-1">
+          <div class="position-relative">
+            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop" alt="Intermediate lessons" class="img-fluid rounded-4 shadow-lg w-100 object-cover" style="aspect-ratio: 4/3;">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" id="advanced">
-    <div class="container">
+    <div class="container px-lg-5">
       <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <span class="skill-badge skill-advanced mb-3" style="display: inline-block;">Advanced</span>
-          <h2>Advanced Programs</h2>
-          <p style="font-size: 1.125rem; color: var(--text-secondary);">Ready to push your limits? Our advanced coaching helps you master tricks, jumps, and competition-level skills.</p>
-          <h4 class="mt-4">Advanced Skills:</h4>
-          <ul style="color: var(--text-secondary); font-size: 1.05rem;">
-            <li>High jumps and controlled landings</li>
-            <li>Rotations: backrolls, frontrolls</li>
-            <li>Freestyle tricks and grabs</li>
-            <li>Wave riding techniques</li>
-            <li>Unhooked maneuvers</li>
-            <li>Competition preparation</li>
-          </ul>
-          <div class="mt-4">
-            <a href="booking.html" class="btn btn-primary btn-lg">Book Advanced Coaching</a>
+        <div class="col-lg-7">
+          <div>
+            <span class="skill-badge skill-advanced mb-3" style="display: inline-block;">Advanced</span>
+            <h2 class="mb-3">Advanced Programs</h2>
+            <p class="lead mb-4" style="color: var(--text-secondary); font-size: 1.1rem;">Ready to push your limits? Our advanced coaching helps you master tricks, jumps, and competition-level skills.</p>
+            <h5 class="mb-3" style="font-weight: 600;">Push Your Limits:</h5>
+            <ul class="list-unstyled d-grid gap-2" style="color: var(--text-secondary); font-size: 1.05rem;">
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-danger me-2"></i> High jumps and controlled landings</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-danger me-2"></i> Rotations: backrolls, frontrolls</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-danger me-2"></i> Freestyle tricks and grabs</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-danger me-2"></i> Wave riding techniques</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-danger me-2"></i> Unhooked maneuvers</li>
+              <li class="d-flex align-items-center"><i class="fas fa-check-circle text-danger me-2"></i> Competition preparation</li>
+            </ul>
+            <div class="mt-4 pt-2">
+              <a href="booking.html" class="btn btn-primary btn-lg shadow-sm">Book Advanced Coaching</a>
+            </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <img src="assets/images/adv.jpeg" alt="Advanced lessons" style="border-radius: 1rem; width: 100%;">
+        <div class="col-lg-5">
+          <div class="position-relative">
+            <img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&q=80" alt="Advanced lessons" class="img-fluid rounded-4 shadow-lg w-100 object-cover" style="aspect-ratio: 4/3;">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section section-alt">
-    <div class="container">
+    <div class="container px-lg-5">
       <div class="section-title">
         <h2>Pricing Packages</h2>
         <p>Flexible options to match your goals</p>
       </div>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="pricing-card">
+          <div class="pricing-card border-0 shadow-lg hover-up h-100">
             <div class="pricing-header">
               <h3 class="pricing-title">Discovery Session</h3>
               <div class="pricing-price">$150</div>
               <p class="pricing-period">2 hours</p>
             </div>
             <ul class="pricing-features">
-              <li>✓ Introduction to basics</li>
-              <li>✓ Equipment included</li>
-              <li>✓ Small group (max 5)</li>
-              <li>✓ Perfect for first-timers</li>
+              <li><i class="fas fa-check text-primary me-2"></i> Introduction to basics</li>
+              <li><i class="fas fa-check text-primary me-2"></i> Equipment included</li>
+              <li><i class="fas fa-check text-primary me-2"></i> Small group (max 5)</li>
+              <li><i class="fas fa-check text-primary me-2"></i> Perfect for first-timers</li>
             </ul>
-            <a href="booking.html" class="btn btn-primary w-100">Book Now</a>
+            <a href="booking.html" class="btn btn-primary w-100 mt-auto">Book Now</a>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="pricing-card featured">
+          <div class="pricing-card featured border-0 shadow-xl hover-up h-100 position-relative overflow-hidden">
+            <div class="position-absolute top-0 end-0 bg-warning text-dark px-3 py-1 rounded-bl-lg font-weight-bold" style="border-bottom-left-radius: 10px;">Popular</div>
             <div class="pricing-header">
               <h3 class="pricing-title">Complete Course</h3>
-              <div class="pricing-price">$600</div>
+              <div class="pricing-price text-primary">$600</div>
               <p class="pricing-period">12 hours over 3-5 days</p>
             </div>
             <ul class="pricing-features">
-              <li>✓ Beginner to independent rider</li>
-              <li>✓ All equipment provided</li>
-              <li>✓ Small group (max 4)</li>
-              <li>✓ IKO certification</li>
-              <li>✓ Photo & video memories</li>
+              <li><i class="fas fa-check text-success me-2"></i> Beginner to independent rider</li>
+              <li><i class="fas fa-check text-success me-2"></i> All equipment provided</li>
+              <li><i class="fas fa-check text-success me-2"></i> Small group (max 4)</li>
+              <li><i class="fas fa-check text-success me-2"></i> IKO certification</li>
+              <li><i class="fas fa-check text-success me-2"></i> Photo & video memories</li>
             </ul>
-            <a href="booking.html" class="btn btn-primary w-100">Most Popular</a>
+            <a href="booking.html" class="btn btn-primary w-100 mt-auto btn-lg shadow-sm">Most Popular</a>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="pricing-card">
+          <div class="pricing-card border-0 shadow-lg hover-up h-100">
             <div class="pricing-header">
               <h3 class="pricing-title">Private Coaching</h3>
               <div class="pricing-price">$350</div>
               <p class="pricing-period">2 hours</p>
             </div>
             <ul class="pricing-features">
-              <li>✓ One-on-one instruction</li>
-              <li>✓ Customized focus</li>
-              <li>✓ Video analysis</li>
-              <li>✓ All levels welcome</li>
-              <li>✓ Flexible scheduling</li>
+              <li><i class="fas fa-check text-primary me-2"></i> One-on-one instruction</li>
+              <li><i class="fas fa-check text-primary me-2"></i> Customized focus</li>
+              <li><i class="fas fa-check text-primary me-2"></i> Video analysis</li>
+              <li><i class="fas fa-check text-primary me-2"></i> All levels welcome</li>
+              <li><i class="fas fa-check text-primary me-2"></i> Flexible scheduling</li>
             </ul>
-            <a href="booking.html" class="btn btn-primary w-100">Book Now</a>
+            <a href="booking.html" class="btn btn-primary w-100 mt-auto">Book Now</a>
           </div>
         </div>
       </div>
@@ -216,10 +235,10 @@
           <h5>🏄 Ride The Wind</h5>
           <p>Your premier kitesurfing and windsurfing school. Learn from the best, ride with confidence.</p>
           <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook">📘</a>
-            <a href="#" class="social-link" aria-label="Instagram">📷</a>
-            <a href="#" class="social-link" aria-label="YouTube">📹</a>
-            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+            <a href="https://facebook.com/ridethewind" class="social-link" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/ridethewind" class="social-link" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/ridethewind" class="social-link" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://twitter.com/ridethewind" class="social-link" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
         <div class="col-md-2">
@@ -248,11 +267,11 @@
           <p>📍 123 Beach Road, Surf Paradise<br>
           📧 info@ridethewind.com<br>
           📞 +1 (555) 123-4567</p>
-          <div class="mt-3">
+          <!-- <div class="mt-3">
              <small class="text-white-50">Dashboards:</small><br>
              <a href="dashboard/admin/index.html" class="text-white-50 text-decoration-none me-2">Admin</a>
              <a href="dashboard/student/index.html" class="text-white-50 text-decoration-none">Student</a>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="footer-bottom">

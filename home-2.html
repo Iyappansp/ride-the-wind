@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/dark-mode.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏄</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   
@@ -39,11 +41,14 @@
       
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html" data-testid="nav-home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="home-2.html" data-testid="nav-home-2">Home 2</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-testid="nav-home-dropdown">
+              Home
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html" data-testid="nav-about">About</a>
@@ -63,7 +68,6 @@
           <li class="nav-item">
             <a class="nav-link" href="blog.html" data-testid="nav-blog">Blog</a>
           </li>
-          <li class="nav-item">
           <li class="nav-item">
             <a class="nav-link" href="contact.html" data-testid="nav-contact">Contact</a>
           </li>
@@ -101,8 +105,8 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" data-testid="hero-section" style="background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);">
-    <div class="container">
+  <section class="hero" data-testid="hero-section" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/images/home.jpg') no-repeat center center/cover;">
+    <div class="container px-lg-5">
       <div class="hero-content">
         <h1 data-testid="hero-title">Experience the Freedom of Flight</h1>
         <p data-testid="hero-description">Join our elite community of riders. Advanced coaching, premium gear, and exclusive locations for the ultimate wind sports clarity.</p>
@@ -120,7 +124,7 @@
 
   <!-- Skill Level Programs -->
   <section class="section section-alt" data-testid="programs-section">
-    <div class="container">
+    <div class="container px-lg-5">
       <div class="section-title">
         <h2>Curated Learning Paths</h2>
         <p>Expertly designed curriculums to take you from novice to pro in record time.</p>
@@ -190,18 +194,120 @@
     </div>
   </section>
 
+  <!-- Features Section (Why Us) -->
+  <section class="section">
+    <div class="container px-lg-5">
+      <div class="section-title">
+        <h2>Why Ride With Us?</h2>
+        <p>We provide more than just lessons; we provide an experience.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-3 text-center">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🛡️</div>
+          <h4>Safety First</h4>
+          <p class="text-secondary">Top-tier safety protocols and equipment for your peace of mind.</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🌊</div>
+          <h4>Prime Locations</h4>
+          <p class="text-secondary">Exclusive access to the best wind spots with uncrowded waters.</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">👨‍🏫</div>
+          <h4>Expert Team</h4>
+          <p class="text-secondary">Learn from IKO certified instructors with years of global experience.</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🏄</div>
+          <h4>Latest Gear</h4>
+          <p class="text-secondary">Train with the newest kites, boards, and safety gear every season.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section class="section section-alt">
+    <div class="container px-lg-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h2>Our Vision</h2>
+          <p class="lead" style="color: var(--text-secondary);">Empowering individuals to harness the power of the wind and find freedom on the water.</p>
+          <p>We believe that water sports are more than just a hobby—they are a way of life. Our vision is to build a global community of riders who respect the ocean, support each other, and constantly push the boundaries of what's possible.</p>
+          <a href="about.html" class="btn btn-outline-primary mt-3">Read Our Story</a>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop" alt="Kitesurfing vision" style="border-radius: 1rem; width: 85%; box-shadow: var(--shadow-xl);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section" style="background: var(--ocean-deep); color: white;">
+    <div class="container px-lg-5">
+      <div class="row text-center g-4">
+        <div class="col-md-3">
+          <h2 class="stat-number" data-count="10" data-suffix="+" style="font-size: 3rem; color: var(--accent);">0+</h2>
+          <p>Years of Excellence</p>
+        </div>
+        <div class="col-md-3">
+          <h2 class="stat-number" data-count="5000" data-suffix="+" style="font-size: 3rem; color: var(--accent);">0+</h2>
+          <p>Happy Students</p>
+        </div>
+        <div class="col-md-3">
+          <h2 class="stat-number" data-count="50" data-suffix="+" style="font-size: 3rem; color: var(--accent);">0+</h2>
+          <p>Certified Instructors</p>
+        </div>
+        <div class="col-md-3">
+          <h2 class="stat-number" data-count="3" style="font-size: 3rem; color: var(--accent);">0</h2>
+          <p>Global Locations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Preview -->
+    <section class="section">
+    <div class="container px-lg-5">
+      <div class="section-title">
+        <h2>Life at Ride The Wind</h2>
+        <p>A glimpse into our daily adventures</p>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <img src="assets/images/937f3357b89283a68e7e2a949cf8f3b0.jpg" alt="Gallery 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 0.5rem;">
+        </div>
+        <div class="col-md-4">
+          <img src="assets/images/adv.jpeg" alt="Gallery 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 0.5rem;">
+        </div>
+        <div class="col-md-4">
+          <img src="assets/images/pexels-jason-back-3707884-5544783.jpg" alt="Gallery 3" style="width: 100%; height: 250px; object-fit: cover; border-radius: 0.5rem;">
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="gallery.html" class="btn btn-outline-primary">View Full Gallery</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer" data-testid="footer">
     <div class="container">
       <div class="row g-4">
         <div class="col-md-4">
-          <h5>🏄 Ride The Wind</h5>
+          <a href="index.html" class="text-decoration-none">
+            <h5>🏄 Ride The Wind</h5>
+          </a>
           <p>Your premier kitesurfing and windsurfing school. Learn from the best, ride with confidence.</p>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook" data-testid="social-facebook">📘</a>
-            <a href="#" class="social-link" aria-label="Instagram" data-testid="social-instagram">📷</a>
-            <a href="#" class="social-link" aria-label="YouTube" data-testid="social-youtube">📹</a>
-            <a href="#" class="social-link" aria-label="Twitter" data-testid="social-twitter">🐦</a>
+          <div class="mt-3">
+            <p class="mb-2">Follow Us:</p>
+            <div class="social-links">
+              <a href="https://facebook.com/ridethewind" class="social-link" aria-label="Facebook" data-testid="social-facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://instagram.com/ridethewind" class="social-link" aria-label="Instagram" data-testid="social-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://youtube.com/ridethewind" class="social-link" aria-label="YouTube" data-testid="social-youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+              <a href="https://twitter.com/ridethewind" class="social-link" aria-label="Twitter" data-testid="social-twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
           </div>
         </div>
         <div class="col-md-2">
@@ -227,20 +333,22 @@
         </div>
         <div class="col-md-4">
           <h5>Contact Info</h5>
-          <p>📍 123 Beach Road, Surf Paradise<br>
-          📧 info@ridethewind.com<br>
-          📞 +1 (555) 123-4567</p>
+          <ul class="list-unstyled">
+            <li class="mb-2">📍 123 Beach Road, Surf Paradise</li>
+            <li class="mb-2">📧 info@ridethewind.com</li>
+            <li class="mb-2">📞 +1 (555) 123-4567</li>
+          </ul>
           <p style="margin-top: 1rem;"><strong>Hours:</strong><br>
           Daily: 8:00 AM - 6:00 PM</p>
-          <div class="mt-3">
+          <!-- <div class="mt-3">
              <small class="text-white-50">Dashboards:</small><br>
              <a href="dashboard/admin/index.html" class="text-white-50 text-decoration-none me-2">Admin</a>
              <a href="dashboard/student/index.html" class="text-white-50 text-decoration-none">Student</a>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 Ride The Wind. All rights reserved. Built with passion for wind sports.</p>
+        <p>&copy; 2026 Ride The Wind. All rights reserved. Built with passion for wind sports.</p>
       </div>
     </div>
   </footer>

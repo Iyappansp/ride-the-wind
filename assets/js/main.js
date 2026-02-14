@@ -62,9 +62,8 @@ const navbarToggler = document.querySelector('.navbar-toggler');
 const navbarCollapse = document.querySelector('.navbar-collapse');
 
 if (navbarToggler && navbarCollapse) {
-  navbarToggler.addEventListener('click', () => {
-    navbarCollapse.classList.toggle('show');
-  });
+  // We let Bootstrap handle the toggle button natively via data-bs-toggle
+  // But we still want to close the menu when clicking outside or on a link
 
   // Close mobile menu when clicking outside
   document.addEventListener('click', (e) => {
@@ -73,11 +72,19 @@ if (navbarToggler && navbarCollapse) {
     }
   });
 
-  // Close mobile menu when clicking a nav link
-  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  // Close mobile menu when clicking a nav link (but NOT for dropdown toggles)
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle), .dropdown-item');
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      navbarCollapse.classList.remove('show');
+      if (navbarCollapse.classList.contains('show')) {
+        // Use Bootstrap's collapse method if available, otherwise fallback to class removal
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (bsCollapse) {
+          bsCollapse.hide();
+        } else {
+          navbarCollapse.classList.remove('show');
+        }
+      }
     });
   });
 }

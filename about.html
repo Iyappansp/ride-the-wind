@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/dark-mode.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg">
@@ -31,9 +32,14 @@
       
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link" href="index.html" data-testid="nav-home">Home</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="home-2.html" data-testid="nav-home-2">Home 2</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-testid="nav-home-dropdown">
+              Home
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+            </ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="about.html" data-testid="nav-about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="programs.html" data-testid="nav-programs">Programs</a></li>
@@ -62,7 +68,6 @@
             </ul>
           </li>
           <li class="nav-item ms-3">
-          <li class="nav-item ms-3">
              <div class="d-flex gap-2">
               <button class="theme-toggle" id="rtlToggle" aria-label="Toggle RTL">
                 <span id="rtlIcon">🇸🇦</span>
@@ -72,21 +77,20 @@
               </button>
             </div>
           </li>
-          </li>
         </ul>
       </div>
     </div>
   </nav>
   
-  <section style="background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); padding: 5rem 0 3rem; color: white; text-align: center;">
+  <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1510006854241-140d278c2dc0?auto=format&fit=crop&q=80');">
     <div class="container">
       <h1 data-testid="page-title">About Ride The Wind</h1>
-      <p style="font-size: 1.125rem; opacity: 0.95;">Passionate about wind sports since 2009</p>
+      <p>Passionate about wind sports since 2009</p>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container px-lg-5">
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
           <img src="https://images.unsplash.com/photo-1502933691298-84fc14542831?w=800&h=600&fit=crop" alt="Kitesurfing school" style="border-radius: 1rem; width: 100%;" data-testid="about-image">
@@ -108,7 +112,7 @@
   </section>
 
   <section class="section section-alt">
-    <div class="container">
+    <div class="container px-lg-5">
       <div class="section-title">
         <h2>Our Values</h2>
         <p>What drives us every day</p>
@@ -146,8 +150,137 @@
     </div>
   </section>
 
+  <!-- Vision Section -->
   <section class="section">
-    <div class="container">
+    <div class="container px-lg-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-lg-2 text-center">
+           <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop" alt="Our Vision" class="img-fluid rounded-4 shadow-lg" style="width: 85%; object-fit: cover; display: inline-block;">
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <h2 class="mb-4">Our Vision</h2>
+          <p class="lead text-primary mb-4" style="font-weight: 600;">Empowering a global community of wind enthusiasts.</p>
+          <p class="text-secondary mb-4" style="font-size: 1.1rem; line-height: 1.8;">We envision a world where the freedom of wind sports is accessible to everyone. By combining cutting-edge teaching methodologies with a deep respect for the ocean, we aim to create safe, confident, and environmentally conscious riders who push the boundaries of what's possible in the water.</p>
+          <div class="d-flex gap-4 mt-4">
+             <div class="d-flex align-items-center">
+                <i class="fas fa-globe-americas text-primary me-2 fa-lg"></i>
+                <span style="font-weight: 500;">Global Community</span>
+             </div>
+             <div class="d-flex align-items-center">
+                <i class="fas fa-leaf text-primary me-2 fa-lg"></i>
+                <span style="font-weight: 500;">Sustainable Future</span>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us Section -->
+  <section class="section section-alt">
+    <div class="container px-lg-5">
+      <div class="section-title text-center mb-5">
+        <h2>Why Choose Us?</h2>
+        <p class="text-secondary">Distinguishing ourselves through excellence and passion</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-4 text-center hover-up">
+            <div class="mb-3 text-primary">
+              <i class="fas fa-history fa-3x"></i>
+            </div>
+            <h4>Proven Track Record</h4>
+            <p class="text-secondary mt-3">With over 15 years of operation and thousands of certified students, our teaching methods are refined, effective, and results-driven.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-4 text-center hover-up">
+            <div class="mb-3 text-primary">
+              <i class="fas fa-map-marked-alt fa-3x"></i>
+            </div>
+            <h4>Prime Location</h4>
+            <p class="text-secondary mt-3">Located on a private beach with consistent wind and flat water, offering the perfect learning environment away from crowds.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-4 text-center hover-up">
+            <div class="mb-3 text-primary">
+              <i class="fas fa-users fa-3x"></i>
+            </div>
+            <h4>Community Focus</h4>
+            <p class="text-secondary mt-3">We're not just a school; we're a family. Join our weekly events, beach BBQs, and trips to meet fellow riders.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section">
+    <div class="container px-lg-5">
+      <div class="section-title text-center mb-5">
+        <h2>School Features</h2>
+        <p class="text-secondary">Everything you need for the ultimate experience</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+           <div class="card border-0 shadow-sm h-100 feature-box">
+              <div class="card-body d-flex align-items-start p-3">
+                <div class="icon-box bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; flex-shrink: 0;">
+                   <i class="fas fa-headset fa-lg"></i>
+                </div>
+                <div>
+                   <h5 class="mb-1">Radio Helmets</h5>
+                   <p class="text-secondary small mb-0">Direct real-time communication with your instructor.</p>
+                </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+           <div class="card border-0 shadow-sm h-100 feature-box">
+              <div class="card-body d-flex align-items-start p-3">
+                <div class="icon-box bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; flex-shrink: 0;">
+                   <i class="fas fa-video fa-lg"></i>
+                </div>
+                <div>
+                   <h5 class="mb-1">Video Analysis</h5>
+                   <p class="text-secondary small mb-0">Review your mistakes and progress after every session.</p>
+                </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+           <div class="card border-0 shadow-sm h-100 feature-box">
+              <div class="card-body d-flex align-items-start p-3">
+                <div class="icon-box bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; flex-shrink: 0;">
+                   <i class="fas fa-life-ring fa-lg"></i>
+                </div>
+                <div>
+                   <h5 class="mb-1">Jet Ski Support</h5>
+                   <p class="text-secondary small mb-0">Instant rescue and support whenever you need it.</p>
+                </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+           <div class="card border-0 shadow-sm h-100 feature-box">
+              <div class="card-body d-flex align-items-start p-3">
+                <div class="icon-box bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; flex-shrink: 0;">
+                   <i class="fas fa-wifi fa-lg"></i>
+                </div>
+                <div>
+                   <h5 class="mb-1">Beach WiFi</h5>
+                   <p class="text-secondary small mb-0">Stay connected and share your moments instantly.</p>
+                </div>
+              </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container px-lg-5">
       <div class="section-title">
         <h2>Certifications & Affiliations</h2>
       </div>
@@ -181,10 +314,10 @@
           <h5>🏄 Ride The Wind</h5>
           <p>Your premier kitesurfing and windsurfing school. Learn from the best, ride with confidence.</p>
           <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook">📘</a>
-            <a href="#" class="social-link" aria-label="Instagram">📷</a>
-            <a href="#" class="social-link" aria-label="YouTube">📹</a>
-            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+            <a href="https://facebook.com/ridethewind" class="social-link" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/ridethewind" class="social-link" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/ridethewind" class="social-link" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://twitter.com/ridethewind" class="social-link" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
         <div class="col-md-2">
@@ -213,11 +346,11 @@
           <p>📍 123 Beach Road, Surf Paradise<br>
           📧 info@ridethewind.com<br>
           📞 +1 (555) 123-4567</p>
-          <div class="mt-3">
+          <!-- <div class="mt-3">
              <small class="text-white-50">Dashboards:</small><br>
              <a href="dashboard/admin/index.html" class="text-white-50 text-decoration-none me-2">Admin</a>
              <a href="dashboard/student/index.html" class="text-white-50 text-decoration-none">Student</a>
-          </div>
+          </div> -->
       </div>
       <div class="footer-bottom">
         <p>&copy; 2024 Ride The Wind. All rights reserved.</p>

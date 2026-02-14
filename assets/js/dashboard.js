@@ -59,21 +59,60 @@ function updateThemeIcon(theme) {
 
 const sidebarToggle = document.getElementById('sidebarToggle');
 const sidebar = document.querySelector('.dashboard-sidebar');
-const dashboardContent = document.querySelector('.dashboard-content');
+const body = document.body;
+
+// Create overlay element if it doesn't exist
+let overlay = document.querySelector('.sidebar-overlay');
+if (!overlay && sidebar) {
+  overlay = document.createElement('div');
+  overlay.className = 'sidebar-overlay';
+  body.appendChild(overlay);
+}
 
 if (sidebarToggle && sidebar) {
-  sidebarToggle.addEventListener('click', () => {
+  // Add a close button to the sidebar for mobile
+  const closeBtn = document.createElement('button');
+  closeBtn.innerHTML = '✕';
+  closeBtn.className = 'sidebar-close-btn';
+  sidebar.prepend(closeBtn);
+
+  const toggleSidebar = () => {
     sidebar.classList.toggle('show');
+    if (overlay) overlay.classList.toggle('show');
+    body.style.overflow = sidebar.classList.contains('show') ? 'hidden' : '';
+  };
+
+  sidebarToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleSidebar();
+  });
+
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    sidebar.classList.remove('show');
+    if (overlay) overlay.classList.remove('show');
+    body.style.overflow = '';
   });
   
-  // Close sidebar when clicking outside on mobile
-  document.addEventListener('click', (e) => {
-    if (window.innerWidth < 768 && 
-        !sidebar.contains(e.target) && 
-        !sidebarToggle.contains(e.target) &&
-        sidebar.classList.contains('show')) {
+  // Close sidebar when clicking overlay
+  if (overlay) {
+    overlay.addEventListener('click', () => {
       sidebar.classList.remove('show');
-    }
+      overlay.classList.remove('show');
+      body.style.overflow = '';
+    });
+  }
+
+  // Close sidebar when clicking links on mobile
+  const navLinks = sidebar.querySelectorAll('.sidebar-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 768) {
+        sidebar.classList.remove('show');
+        if (overlay) overlay.classList.remove('show');
+        body.style.overflow = '';
+      }
+    });
   });
 }
 

@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/dark-mode.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏄</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   
@@ -39,11 +41,14 @@
       
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html" data-testid="nav-home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="home-2.html" data-testid="nav-home-2">Home 2</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-testid="nav-home-dropdown">
+              Home
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+              <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html" data-testid="nav-about">About</a>
@@ -63,7 +68,6 @@
           <li class="nav-item">
             <a class="nav-link" href="blog.html" data-testid="nav-blog">Blog</a>
           </li>
-          <li class="nav-item">
           <li class="nav-item">
             <a class="nav-link" href="contact.html" data-testid="nav-contact">Contact</a>
           </li>
@@ -102,8 +106,8 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" data-testid="hero-section">
-    <div class="container">
+  <section class="hero" data-testid="hero-section" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/images/home.jpg') no-repeat center center/cover;">
+    <div class="container px-lg-5">
       <div class="hero-content">
         <h1 data-testid="hero-title">Master the Art of Wind-Powered Surfing</h1>
         <p data-testid="hero-description">From beginner to pro, learn kitesurfing and windsurfing with certified instructors on the world's best beaches. Equipment included, safety guaranteed.</p>
@@ -121,7 +125,7 @@
 
   <!-- Stats Section -->
   <section class="section">
-    <div class="container">
+    <div class="container px-lg-5">
       <div class="stats-container">
         <div class="stat-card" data-testid="stat-students">
           <div class="stat-icon">👥</div>
@@ -149,7 +153,7 @@
 
   <!-- Skill Level Programs -->
   <section class="section section-alt" data-testid="programs-section">
-    <div class="container">
+    <div class="container px-lg-5">
       <div class="section-title">
         <h2>Programs for Every Skill Level</h2>
         <p>Whether you're a complete beginner or looking to master advanced tricks, we have the perfect program for you</p>
@@ -164,7 +168,7 @@
                 <span class="skill-badge skill-beginner">Beginner</span>
               </div>
               <h3 class="card-title">Start Your Journey</h3>
-              <p class="card-text">Perfect for first-timers. Learn the basics of kite control, safety procedures, and your first rides on the water. No experience needed!</p>
+              <p class="card-text">Perfect for first-timers. Learn the basics of kite control, safety procedures, and first rides on the water.</p>
               <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
                 <li>✓ 4-6 hours of instruction</li>
                 <li>✓ All equipment provided</li>
@@ -221,7 +225,7 @@
 
   <!-- Wind Forecast Preview -->
   <section class="section" data-testid="wind-forecast-section">
-    <div class="container">
+    <div class="container px-lg-5">
       <div class="section-title">
         <h2>Lessons Based on Wind Conditions</h2>
         <p>We match your skill level with perfect wind conditions for optimal learning and safety</p>
@@ -264,7 +268,7 @@
 
   <!-- Why Choose Us -->
   <section class="section section-alt" data-testid="features-section">
-    <div class="container">
+    <div class="container px-lg-5">
       <div class="section-title">
         <h2>Why Choose Ride The Wind</h2>
         <p>Your safety and progression are our top priorities</p>
@@ -305,7 +309,7 @@
 
   <!-- Testimonials -->
   <section class="section" data-testid="testimonials-section">
-    <div class="container">
+    <div class="container px-lg-5">
       <div class="section-title">
         <h2>What Our Students Say</h2>
         <p>Real stories from real riders</p>
@@ -354,7 +358,7 @@
 
   <!-- CTA Section -->
   <section class="section section-alt" data-testid="cta-section">
-    <div class="container text-center">
+    <div class="container text-center px-lg-5">
       <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Ready to Ride the Wind?</h2>
       <p style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
         Book your lesson today and start your wind-powered adventure. Beginner-friendly, expert-approved.
@@ -375,13 +379,18 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-md-4">
-          <h5>🏄 Ride The Wind</h5>
+          <a href="index.html" class="text-decoration-none">
+            <h5>🏄 Ride The Wind</h5>
+          </a>
           <p>Your premier kitesurfing and windsurfing school. Learn from the best, ride with confidence.</p>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook" data-testid="social-facebook">📘</a>
-            <a href="#" class="social-link" aria-label="Instagram" data-testid="social-instagram">📷</a>
-            <a href="#" class="social-link" aria-label="YouTube" data-testid="social-youtube">📹</a>
-            <a href="#" class="social-link" aria-label="Twitter" data-testid="social-twitter">🐦</a>
+          <div class="mt-3">
+            <p class="mb-2">Follow Us:</p>
+            <div class="social-links">
+              <a href="https://facebook.com/ridethewind" class="social-link" aria-label="Facebook" data-testid="social-facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://instagram.com/ridethewind" class="social-link" aria-label="Instagram" data-testid="social-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://youtube.com/ridethewind" class="social-link" aria-label="YouTube" data-testid="social-youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+              <a href="https://twitter.com/ridethewind" class="social-link" aria-label="Twitter" data-testid="social-twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
           </div>
         </div>
         <div class="col-md-2">
@@ -407,20 +416,22 @@
         </div>
         <div class="col-md-4">
           <h5>Contact Info</h5>
-          <p>📍 123 Beach Road, Surf Paradise<br>
-          📧 info@ridethewind.com<br>
-          📞 +1 (555) 123-4567</p>
+          <ul class="list-unstyled">
+            <li class="mb-2">📍 123 Beach Road, Surf Paradise</li>
+            <li class="mb-2">📧 info@ridethewind.com</li>
+            <li class="mb-2">📞 +1 (555) 123-4567</li>
+          </ul>
           <p style="margin-top: 1rem;"><strong>Hours:</strong><br>
           Daily: 8:00 AM - 6:00 PM</p>
-          <div class="mt-3">
+          <!-- <div class="mt-3">
              <small class="text-white-50">Dashboards:</small><br>
              <a href="dashboard/admin/index.html" class="text-white-50 text-decoration-none me-2">Admin</a>
              <a href="dashboard/student/index.html" class="text-white-50 text-decoration-none">Student</a>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 Ride The Wind. All rights reserved. Built with passion for wind sports.</p>
+        <p>&copy; 2026 Ride The Wind. All rights reserved. Built with passion for wind sports.</p>
       </div>
     </div>
   </footer>
