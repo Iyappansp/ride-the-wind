@@ -41,57 +41,50 @@
       
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-testid="nav-home-dropdown">
-              Home
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="programs.html">Programs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="instructors.html">Instructors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          
+          <!-- User Profile (Visible after login) -->
+          <li class="nav-item dropdown auth-logged-in" style="display: none;">
+            <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user-circle fa-lg"></i> Profile
             </a>
-            <ul class="dropdown-menu" aria-labelledby="homeDropdown">
-              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
-              <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html" data-testid="nav-about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="programs.html" data-testid="nav-programs">Programs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="booking.html" data-testid="nav-booking">Book Now</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="instructors.html" data-testid="nav-instructors">Instructors</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="gallery.html" data-testid="nav-gallery">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="blog.html" data-testid="nav-blog">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html" data-testid="nav-contact">Contact</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dashboardDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dashboard
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dashboardDropdown">
-              <li><a class="dropdown-item" href="dashboard/student/index.html">Student Dashboard</a></li>
-              <li><a class="dropdown-item" href="dashboard/admin/index.html">Admin Dashboard</a></li>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0" aria-labelledby="profileDropdown">
+              <li><h6 class="dropdown-header">Dashboard</h6></li>
+              <li><a class="dropdown-item" href="dashboard/student/index.html"><i class="fa-solid fa-user-graduate me-2"></i>Student Dashboard</a></li>
+              <li><a class="dropdown-item" href="dashboard/admin/index.html"><i class="fa-solid fa-user-shield me-2"></i>Admin Dashboard</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" onclick="logoutUser(event)"><i class="fa-solid fa-sign-out-alt me-2"></i>Logout</a></li>
             </ul>
           </li>
           
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <!-- CTAs -->
+          <li class="nav-item auth-logged-out ms-lg-2 my-2 my-lg-0">
+            <a class="nav-link btn btn-outline-primary px-3 py-2" style="border-radius: 5px; font-weight: 500;" href="login.html">
               Login
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="login.html#admin">Admin Login</a></li>
-              <li><a class="dropdown-item" href="login.html#student">Student Login</a></li>
-            </ul>
           </li>
-          <li class="nav-item ms-3">
-            <div class="d-flex gap-2">
+          <li class="nav-item ms-lg-2 my-2 my-lg-0">
+            <a class="nav-link btn btn-primary text-white px-4 py-2" style="border-radius: 5px; font-weight: 600;" href="booking.html">
+              Book Now
+            </a>
+          </li>
+
+          <li class="nav-item ms-lg-3">
+            <div class="d-flex gap-2 justify-content-center">
               <button class="theme-toggle" id="rtlToggle" aria-label="Toggle RTL">
                 <span id="rtlIcon">🇸🇦</span>
               </button>
@@ -128,22 +121,22 @@
     <div class="container px-lg-5">
       <div class="stats-container">
         <div class="stat-card" data-testid="stat-students">
-          <div class="stat-icon">👥</div>
+          <div class="stat-icon"><i class="fa-solid fa-users text-primary"></i></div>
           <div class="stat-number" data-count="2500" data-suffix="+">0+</div>
           <div class="stat-label">Students Trained</div>
         </div>
         <div class="stat-card" data-testid="stat-years">
-          <div class="stat-icon">⭐</div>
+          <div class="stat-icon"><i class="fa-solid fa-star text-primary"></i></div>
           <div class="stat-number" data-count="15" data-suffix="+">0+</div>
           <div class="stat-label">Years Experience</div>
         </div>
         <div class="stat-card" data-testid="stat-instructors">
-          <div class="stat-icon">🏆</div>
+          <div class="stat-icon"><i class="fa-solid fa-trophy text-primary"></i></div>
           <div class="stat-number" data-count="20" data-suffix="+">0+</div>
           <div class="stat-label">Certified Instructors</div>
         </div>
         <div class="stat-card" data-testid="stat-success">
-          <div class="stat-icon">✅</div>
+          <div class="stat-icon"><i class="fa-solid fa-circle-check text-primary"></i></div>
           <div class="stat-number" data-count="98" data-suffix="%">0%</div>
           <div class="stat-label">Success Rate</div>
         </div>
@@ -234,7 +227,7 @@
       <div class="row g-4">
         <div class="col-md-4">
           <div class="wind-card wind-low" data-testid="wind-low">
-            <div class="wind-icon">🍃</div>
+            <div class="wind-icon"><i class="fa-solid fa-leaf" style="color: #10b981;"></i></div>
             <h3 class="wind-label">Light Wind Days</h3>
             <p class="wind-speed">8-12 knots</p>
             <p style="color: var(--text-secondary);">Perfect for beginners learning kite control and first water starts</p>
@@ -242,7 +235,7 @@
         </div>
         <div class="col-md-4">
           <div class="wind-card wind-medium" data-testid="wind-medium">
-            <div class="wind-icon">🌬️</div>
+            <div class="wind-icon"><i class="fa-solid fa-wind" style="color: #3b82f6;"></i></div>
             <h3 class="wind-label">Medium Wind Days</h3>
             <p class="wind-speed">13-20 knots</p>
             <p style="color: var(--text-secondary);">Ideal for intermediate riders mastering upwind and transitions</p>
@@ -250,7 +243,7 @@
         </div>
         <div class="col-md-4">
           <div class="wind-card wind-high" data-testid="wind-high">
-            <div class="wind-icon">💨</div>
+            <div class="wind-icon"><i class="fa-solid fa-cloud-showers-heavy" style="color: #6366f1;"></i></div>
             <h3 class="wind-label">Strong Wind Days</h3>
             <p class="wind-speed">20+ knots</p>
             <p style="color: var(--text-secondary);">Advanced riders only - perfect for jumps and freestyle tricks</p>
@@ -277,28 +270,28 @@
       <div class="row g-4">
         <div class="col-md-3 col-sm-6">
           <div class="text-center" data-testid="feature-certified">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🏅</div>
+            <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary);"><i class="fa-solid fa-medal"></i></div>
             <h4>IKO Certified</h4>
             <p style="color: var(--text-secondary);">All instructors are internationally certified professionals</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
           <div class="text-center" data-testid="feature-equipment">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🏄</div>
+            <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary);"><i class="fa-solid fa-person-surfing"></i></div>
             <h4>Premium Equipment</h4>
             <p style="color: var(--text-secondary);">Latest gear from top brands, included in every lesson</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
           <div class="text-center" data-testid="feature-safety">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🛡️</div>
+            <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary);"><i class="fa-solid fa-shield-halved"></i></div>
             <h4>Safety First</h4>
             <p style="color: var(--text-secondary);">Comprehensive insurance and safety protocols</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
           <div class="text-center" data-testid="feature-location">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🏖️</div>
+            <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary);"><i class="fa-solid fa-umbrella-beach"></i></div>
             <h4>Perfect Location</h4>
             <p style="color: var(--text-secondary);">Pristine beaches with ideal wind conditions year-round</p>
           </div>

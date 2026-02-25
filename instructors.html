@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/dark-mode.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏄</text></svg>">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg">
@@ -19,46 +20,56 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-testid="nav-home-dropdown">
-              Home
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="programs.html">Programs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="instructors.html">Instructors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          
+          <!-- User Profile (Visible after login) -->
+          <li class="nav-item dropdown auth-logged-in" style="display: none;">
+            <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user-circle fa-lg"></i> Profile
             </a>
-            <ul class="dropdown-menu" aria-labelledby="homeDropdown">
-              <li><a class="dropdown-item" href="index.html">Home 1</a></li>
-              <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0" aria-labelledby="profileDropdown">
+              <li><h6 class="dropdown-header">Dashboard</h6></li>
+              <li><a class="dropdown-item" href="dashboard/student/index.html"><i class="fa-solid fa-user-graduate me-2"></i>Student Dashboard</a></li>
+              <li><a class="dropdown-item" href="dashboard/admin/index.html"><i class="fa-solid fa-user-shield me-2"></i>Admin Dashboard</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" onclick="logoutUser(event)"><i class="fa-solid fa-sign-out-alt me-2"></i>Logout</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
-          <li class="nav-item"><a class="nav-link" href="booking.html">Book Now</a></li>
-          <li class="nav-item"><a class="nav-link active" href="instructors.html">Instructors</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dashboardDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dashboard
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dashboardDropdown">
-              <li><a class="dropdown-item" href="dashboard/student/index.html">Student Dashboard</a></li>
-              <li><a class="dropdown-item" href="dashboard/admin/index.html">Admin Dashboard</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          
+          <!-- CTAs -->
+          <li class="nav-item auth-logged-out ms-lg-2 my-2 my-lg-0">
+            <a class="nav-link btn btn-outline-primary px-3 py-2" style="border-radius: 5px; font-weight: 500;" href="login.html">
               Login
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="login.html#admin">Admin Login</a></li>
-              <li><a class="dropdown-item" href="login.html#student">Student Login</a></li>
-            </ul>
           </li>
-          <li class="nav-item ms-3">
-             <div class="d-flex gap-2">
+          <li class="nav-item ms-lg-2 my-2 my-lg-0">
+            <a class="nav-link btn btn-primary text-white px-4 py-2" style="border-radius: 5px; font-weight: 600;" href="booking.html">
+              Book Now
+            </a>
+          </li>
+
+          <li class="nav-item ms-lg-3">
+            <div class="d-flex gap-2 justify-content-center">
               <button class="theme-toggle" id="rtlToggle" aria-label="Toggle RTL">
                 <span id="rtlIcon">🇸🇦</span>
               </button>
-              <button class="theme-toggle" id="themeToggle"><span id="themeIcon">🌙</span></button>
+              <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" data-testid="theme-toggle">
+                <span id="themeIcon">🌙</span>
+              </button>
             </div>
           </li>
         </ul>

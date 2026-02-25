@@ -21,8 +21,8 @@
   
   /* Text Colors */
   --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
+  --text-secondary: #334155;
+  --text-muted: #475569;
   
   /* Borders & Shadows */
   --border-color: #e2e8f0;
@@ -156,11 +156,27 @@ img {
 
 @media (max-width: 1200px) {
   .navbar-nav .nav-link {
-    padding: 0.5rem 0.4rem;
-    font-size: 0.85rem;
+    padding: 0.5rem 0.5rem;
+    font-size: 0.9rem;
   }
-  .navbar-brand {
-    font-size: 1.25rem !important;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 980px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .navbar-nav {
+    gap: 0.25rem;
+  }
+  .nav-link.btn {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    font-size: 0.85rem !important;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
   }
 }
 
@@ -340,6 +356,8 @@ img {
   transition: var(--transition);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 0.5rem;
   text-decoration: none;
 }
@@ -806,6 +824,12 @@ select.form-control {
 .gallery-caption {
   color: white;
   font-weight: 600;
+  font-size: 1.1rem;
+  transition: font-size 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+  font-size: 1.3rem;
 }
 
 /* ===================================
