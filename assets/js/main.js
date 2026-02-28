@@ -436,6 +436,61 @@ if (testimonialContainer) {
 // CONSOLE INFO
 // ===================================
 
+// ===================================
+// USER AUTH & PROFILE
+// ===================================
+
+function updateNavProfile() {
+  const userRole = localStorage.getItem('userRole');
+  const navUserName = document.getElementById('navUserName');
+  const navUserRole = document.getElementById('navUserRole');
+  const loggedInElements = document.querySelectorAll('.auth-logged-in');
+  const loggedOutElements = document.querySelectorAll('.auth-logged-out');
+
+  if (userRole) {
+    if (navUserName) navUserName.textContent = userRole.charAt(0).toUpperCase() + userRole.slice(1);
+    if (navUserRole) navUserRole.textContent = userRole === 'admin' ? 'Administrator' : 'Verified Student';
+    
+    loggedInElements.forEach(el => {
+      if (el.tagName === 'LI' || el.tagName === 'A') {
+        el.style.setProperty('display', 'flex', 'important');
+      } else {
+        el.style.setProperty('display', 'block', 'important');
+      }
+    });
+    loggedOutElements.forEach(el => el.style.setProperty('display', 'none', 'important'));
+  } else {
+    if (navUserName) navUserName.textContent = 'Guest Explorer';
+    if (navUserRole) navUserRole.textContent = 'Not Signed In';
+    
+    loggedInElements.forEach(el => el.style.setProperty('display', 'none', 'important'));
+    loggedOutElements.forEach(el => {
+      if (el.tagName === 'LI' || el.tagName === 'A') {
+        el.style.setProperty('display', 'flex', 'important');
+      } else {
+        el.style.setProperty('display', 'block', 'important');
+      }
+    });
+  }
+}
+
+window.logoutUser = function(e) {
+  if (e) e.preventDefault();
+  if (confirm('Are you sure you want to logout?')) {
+    localStorage.removeItem('userRole');
+    updateNavProfile();
+    // Redirect if in dashboard
+    if (window.location.pathname.includes('dashboard')) {
+      window.location.href = '../../index.html';
+    } else {
+      window.location.href = 'index.html';
+    }
+  }
+};
+
+// Initialize profile on load
+document.addEventListener('DOMContentLoaded', updateNavProfile);
+
 console.log('%c🏄 Kitesurfing School Template', 'font-size: 20px; color: #0ea5e9; font-weight: bold;');
 console.log('%cBuilt with HTML, CSS, JavaScript, Bootstrap 5, and Tailwind CSS', 'color: #64748b;');
 console.log('%cReady for deployment! 🚀', 'color: #10b981; font-weight: bold;');

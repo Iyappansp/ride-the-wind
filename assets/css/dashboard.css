@@ -158,6 +158,56 @@
   }
 }
 
+/* ===================================
+   ENHANCEMENTS FOR 360PX & 1024PX
+   =================================== */
+
+/* Tablet Optimization (1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .dashboard-content {
+    padding: 1.5rem;
+  }
+  .dashboard-card {
+    padding: 1.25rem;
+  }
+  /* 2 columns for smaller large screens to prevent squishing */
+  .dashboard-content .row.g-4 > .col-md-3 {
+    width: 50% !important;
+  }
+}
+
+/* Mobile Alignment (360px - 480px) */
+@media (max-width: 480px) {
+  .dashboard-content > .d-flex.justify-content-between.align-items-center.mb-4 {
+    display: grid !important;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  
+  .dashboard-content > .d-flex.justify-content-between.align-items-center.mb-4 > div:first-child {
+    grid-column: 1;
+    width: 100%;
+  }
+  
+  .dashboard-content > .d-flex.justify-content-between.align-items-center.mb-4 > #sidebarToggle {
+    grid-column: 2;
+    justify-self: end;
+  }
+  
+  .dashboard-content > .d-flex.justify-content-between.align-items-center.mb-4 > h1 {
+    grid-column: 1 / span 2;
+    margin: 0.25rem 0 0 !important;
+    font-size: 1.35rem !important;
+    text-align: left;
+  }
+
+  .dashboard-stat {
+    font-size: 1.75rem !important;
+  }
+}
+
+
 /* Sidebar Overlay for Mobile */
 .sidebar-overlay {
   display: none;

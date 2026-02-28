@@ -57,30 +57,45 @@
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
           
-          <!-- User Profile (Visible after login) -->
-          <li class="nav-item dropdown auth-logged-in" style="display: none;">
-            <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-user-circle fa-lg"></i> Profile
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0" aria-labelledby="profileDropdown">
-              <li><h6 class="dropdown-header">Dashboard</h6></li>
-              <li><a class="dropdown-item" href="dashboard/student/index.html"><i class="fa-solid fa-user-graduate me-2"></i>Student Dashboard</a></li>
-              <li><a class="dropdown-item" href="dashboard/admin/index.html"><i class="fa-solid fa-user-shield me-2"></i>Admin Dashboard</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#" onclick="logoutUser(event)"><i class="fa-solid fa-sign-out-alt me-2"></i>Logout</a></li>
-            </ul>
-          </li>
-          
-          <!-- CTAs -->
-          <li class="nav-item auth-logged-out ms-lg-2 my-2 my-lg-0">
-            <a class="nav-link btn btn-outline-primary px-3 py-2" style="border-radius: 5px; font-weight: 500;" href="login.html">
-              Login
-            </a>
-          </li>
+          <!-- Book Now CTA -->
           <li class="nav-item ms-lg-2 my-2 my-lg-0">
-            <a class="nav-link btn btn-primary text-white px-4 py-2" style="border-radius: 5px; font-weight: 600;" href="booking.html">
+            <a class="nav-link btn btn-primary text-white px-4 py-2" style="border-radius: 5px; font-weight: 600; box-shadow: 0 4px 14px 0 rgba(14, 165, 233, 0.3);" href="booking.html">
               Book Now
             </a>
+          </li>
+
+          <!-- Combined User Profile Dropdown -->
+          <li class="nav-item dropdown ms-lg-2">
+            <a class="nav-link dropdown-toggle d-flex align-items-center gap-2 p-1 no-caret" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="profile-pic-container">
+                <img src="https://i.pravatar.cc/150?u=ride-the-wind" alt="User Profile" class="profile-pic" data-testid="profile-picture">
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 mt-3" aria-labelledby="profileDropdown" style="border-radius: 15px; min-width: 220px; padding: 0.75rem;">
+              <li class="px-3 py-2 border-bottom mb-2">
+                <span class="d-block fw-bold text-primary" id="navUserName">Guest Explorer</span>
+                <small class="text-muted" id="navUserRole">Not Signed In</small>
+              </li>
+              <li>
+                <a class="dropdown-item py-2 d-flex align-items-center gap-3 rounded-3" href="dashboard/student/index.html">
+                  <div class="icon-circle bg-light text-primary"><i class="fa-solid fa-gauge"></i></div>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item py-2 d-flex align-items-center gap-3 rounded-3 auth-logged-out" href="login.html">
+                  <div class="icon-circle bg-light text-primary"><i class="fa-solid fa-sign-in-alt"></i></div>
+                  <span>Login Options</span>
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item py-2 d-flex align-items-center gap-3 rounded-3 text-danger auth-logged-in" href="#" onclick="logoutUser(event)">
+                  <div class="icon-circle bg-light-danger text-danger"><i class="fa-solid fa-sign-out-alt"></i></div>
+                  <span>Logout</span>
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li class="nav-item ms-lg-3">
@@ -270,28 +285,36 @@
       <div class="row g-4">
         <div class="col-md-3 col-sm-6">
           <div class="text-center" data-testid="feature-certified">
-            <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary);"><i class="fa-solid fa-medal"></i></div>
+            <div class="mb-4 d-flex justify-content-center">
+              <img src="assets/images/illustrations/team.png" alt="Certified Instructors" style="width: 120px; height: 120px; object-fit: contain;">
+            </div>
             <h4>IKO Certified</h4>
             <p style="color: var(--text-secondary);">All instructors are internationally certified professionals</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
           <div class="text-center" data-testid="feature-equipment">
-            <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary);"><i class="fa-solid fa-person-surfing"></i></div>
+            <div class="mb-4 d-flex justify-content-center">
+              <img src="assets/images/illustrations/gear.png" alt="Premium Equipment" style="width: 120px; height: 120px; object-fit: contain;">
+            </div>
             <h4>Premium Equipment</h4>
             <p style="color: var(--text-secondary);">Latest gear from top brands, included in every lesson</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
           <div class="text-center" data-testid="feature-safety">
-            <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary);"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="mb-4 d-flex justify-content-center">
+              <img src="assets/images/illustrations/safety.png" alt="Safety First" style="width: 120px; height: 120px; object-fit: contain;">
+            </div>
             <h4>Safety First</h4>
             <p style="color: var(--text-secondary);">Comprehensive insurance and safety protocols</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6">
           <div class="text-center" data-testid="feature-location">
-            <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary);"><i class="fa-solid fa-umbrella-beach"></i></div>
+            <div class="mb-4 d-flex justify-content-center">
+              <img src="assets/images/illustrations/locations.png" alt="Perfect Location" style="width: 120px; height: 120px; object-fit: contain;">
+            </div>
             <h4>Perfect Location</h4>
             <p style="color: var(--text-secondary);">Pristine beaches with ideal wind conditions year-round</p>
           </div>
@@ -392,7 +415,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="programs.html">Programs</a></li>
-            <li><a href="booking.html">Book Now</a></li>
+            <li class="mt-2"><a href="booking.html" class="btn btn-primary btn-sm text-white px-3" style="border-radius: 4px;">Book Now</a></li>
             <li><a href="instructors.html">Instructors</a></li>
             <li><a href="gallery.html">Gallery</a></li>
           </ul>
