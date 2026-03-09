@@ -181,25 +181,33 @@
   .dashboard-content > .d-flex.justify-content-between.align-items-center.mb-4 {
     display: grid !important;
     grid-template-columns: 1fr auto;
-    gap: 0.75rem;
+    row-gap: 1rem;
+    column-gap: 0.5rem;
     align-items: center;
   }
   
+  /* Brand slot */
   .dashboard-content > .d-flex.justify-content-between.align-items-center.mb-4 > div:first-child {
     grid-column: 1;
     width: 100%;
   }
   
+  /* Menu button slot */
   .dashboard-content > .d-flex.justify-content-between.align-items-center.mb-4 > #sidebarToggle {
     grid-column: 2;
     justify-self: end;
   }
   
-  .dashboard-content > .d-flex.justify-content-between.align-items-center.mb-4 > h1 {
+  /* Welcome text container */
+  .dashboard-content > .d-flex.justify-content-between.align-items-center.mb-4 > div:nth-child(2) {
     grid-column: 1 / span 2;
-    margin: 0.25rem 0 0 !important;
-    font-size: 1.35rem !important;
-    text-align: left;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+  }
+
+  .dashboard-content > .d-flex.justify-content-between.align-items-center.mb-4 h1 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.25rem !important;
   }
 
   .dashboard-stat {

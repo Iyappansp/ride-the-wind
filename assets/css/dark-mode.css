@@ -60,17 +60,28 @@
 [data-theme="dark"] .navbar-nav .nav-link:hover,
 [data-theme="dark"] .navbar-nav .nav-link.active {
   color: var(--primary);
-  background-color: var(--bg-tertiary);
+  background-color: rgba(56, 189, 248, 0.1);
+}
+
+/* Fix Mobile Navbar Toggler Visibility */
+[data-theme="dark"] .navbar-toggler {
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+  filter: invert(1) grayscale(100%) brightness(200%);
 }
 
 [data-theme="dark"] .theme-toggle {
+  background-color: var(--bg-secondary);
   border-color: var(--border-color);
   color: var(--text-primary);
 }
 
 [data-theme="dark"] .theme-toggle:hover {
-  border-color: var(--primary);
   background-color: var(--bg-tertiary);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 /* Hero Dark Mode */
