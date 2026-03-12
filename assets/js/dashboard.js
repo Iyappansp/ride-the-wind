@@ -79,7 +79,13 @@ if (sidebarToggle && sidebar) {
   const toggleSidebar = () => {
     sidebar.classList.toggle('show');
     if (overlay) overlay.classList.toggle('show');
-    body.style.overflow = sidebar.classList.contains('show') ? 'hidden' : '';
+    
+    if (sidebar.classList.contains('show')) {
+      body.style.overflow = 'hidden';
+      sidebar.scrollTop = 0; // Ensure menu starts at top
+    } else {
+      body.style.overflow = '';
+    }
   };
 
   sidebarToggle.addEventListener('click', (e) => {
